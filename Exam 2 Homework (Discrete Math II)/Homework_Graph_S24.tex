@@ -1,0 +1,130 @@
+\documentclass[12pt]{amsart}  
+\usepackage{tikz}
+\usepackage[all, arc, poly ]{xy}
+\usepackage{latexsym,amsmath}
+\voffset=-.8cm
+\hoffset=-1.5cm
+\setlength{\textheight}{23cm}
+\setlength{\textwidth}{16cm}
+\pagestyle{myheadings}
+\newtheorem{q} {Q}
+\newcommand{\beq}{\begin{q}  }
+\newcommand{\eqp} {\end{q}\newpage}
+\newcommand{\df}{\displaystyle\frac}
+\markboth{Dr. Petrescu CCP MATH263 Practice  Exam 2}{Show all your work to get credit}
+\begin{document}
+{\bf Practice  Exam 2  Discrete Mathematics II} \vskip0.2cm
+{\bf Name}: Ayush Pandejee {\bf Due Date}: \underline{02/27} \vskip.5cm
+%%%questions
+\beq{\label{q1}} Show that in a simple graph with at least two vertices there must be two vertices that have the same degree.\\
+
+The defination of a simple graph, is that no vertex has more than one incident edge.\\
+
+In a graph with more than 2 vertices, where they aren't adjacent to each other, they have a degree of 0. Therefore, there are at least two vertices with the same degree.\\
+
+In a graph with more than 2 vertices with an existing edge, then at least two vertices
+are connected and they must have the same degree. Therefore, since no vertex has more than one incident edge and atleast two vertices must have the same degree, then there must be at least two vertices that have the same degree.
+
+\eqp
+\beq A simple graph is called regular if every vertex of this graph has the same degree. A regular graph is called $n- regular$ if every vertex in this graph has degree $n$.  For which values of $n$ are these graphs regular?\\ a) $K_n$\hskip3cm b) $C_n$\hskip3cm c) $W_n$\hskip3cm d) $Q_n$\\
+
+a.\\
+
+$K_n$ is n-1 regular for all n. Since every vertex is connected to each others, every vertex has degree n-1.\\
+
+b.\\
+
+$C_n$ is 2 regular for all n $\geq$ 3. Every vertex is connected to two other vertices.\\
+
+c.\\
+
+$W_n$ is 3 regular for n = 3. Every vertex is connected and there are 4 vertices, therefore each vertex has a degree of 3.\\
+
+d.\\
+
+$Q_n$ is n regular for all n. If the bit strings that two vertices represent differ in exactly one bit position, they are adjacent. There are n-1 other vertices to connect to, for each string/vertex representing a bit string with n-bit positions.
+
+\eqp
+\beq The complementary graph $\overline G$ of a simple graph G has the same vertices as $G$, however, if two vertices are adjacent in $\overline G$ if and only if they are not adjacent in $G$. Describe each of these graphs. \\ a) $\overline K_n$ \hskip3cm b) $\overline C_n$ \hskip3cm c) $\overline W_n$ \hskip3cm d) $\overline Q_n$\\
+
+a.\\
+
+$\overline K_n$ has no adjacent vertices. All vertices have degree 0.\\
+
+b.\\
+
+$\overline C_n$ has all vertices with degree n-3.\\
+
+c.\\
+
+$\overline W_n$ has all vertices with degree n-3.\\
+
+d.\\
+
+$\overline Q_n$ has all vertices with degree $2^n$ - n -1.\\
+
+\eqp
+\beq Write the adjacency matrix for the following digraph:\vskip.6cm \xygraph{ !{<0cm,0cm>;<2cm,0cm>:<0cm,2cm>::} !{(0,1) }*{\bullet_{a}}="a" !{(-1,2) }*{\bullet_{b}}="b" !{(0,3) }*{\bullet_{c}}="c" !{(2,1)}*{\bullet_{d}}="d"!{(3,2)}*{\bullet_{e}}="e" !{(2,3)}*{\bullet_{f}}="f" "a":"e" "a":"c" "a":"b" "b":"d" "c":"d" "d":"e" "b":@/_/"d" "d":@/_/"b" "a":@/^/"e" "e":@/^/"a" "c":@/^/"b" "b":@/^/"c" "a":"f" "f":"c" "b":"f" "f":@/_/"d" "e":@/_/"f" }
+
+$\left(\begin{array}{cccccc} 0 & 1 & 1 & 0 &2&1\\0 & 0 & 1  & 2 &0&1\\ 0 & 1 & 0  & 1&0&0\\0 & 1 & 0  & 0&1&0\\ 1&0&0&0&0&1\\0&0&1&1&0&0\end{array}\right)$\\
+
+\eqp
+\beq Determine whether the given pair of graphs is isomorphic. Exhibit an isomorphism or provide a rigorous argument that none exists. \vskip1.6cm\hskip3cm \xygraph{ !{<0cm,0cm>;<2cm,0cm>:<0cm,2cm>::} !{(0,1) }*{\bullet_{\mu_1}}="a" !{(1,2) }*{\bullet_{\mu_2}}="b" !{(4,1) }*{\bullet_{\mu_3}}="d" !{(1,0)}*+{\bullet_{\mu_4}}="f" !{(3,2)}*{\bullet_{\mu_5}}="c" !{(3,0)}*{\bullet_{\mu_6}}="e"  "a"-"b"  "b"-"c" "c"-"d" "d"-"e" "e"-"f"  "f"-"a"  "a"-"d"   "b"-"e" "c"-"f" "d"-"a" "e"-"b" }  \vskip2.5cm \hskip3cm\xygraph{ !{<0cm,0cm>;<2cm,0cm>:<0cm,2cm>::} !{(0,1) }*{\bullet_{\nu_2}}="a" !{(1,2) }*{\bullet_{\nu_3}}="b" !{(4,1) }*{\bullet_{\nu_5}}="d" !{(1,0)}*{\bullet_{\nu_6}}="f" !{(3,2)}*{\bullet_{\nu_1}}="c" !{(3,0)}*{\bullet_{\nu_4}}="e"  "a"-"c" "b"-"d" "c"-"e" "d"-"f" "e"-"a" "f"-"b" "a"-"d" "b"-"e" "c"-"f"}
+
+They are not isomorphic because the top graph does not have the two $C_3$ cycles that the bottom one has.\\
+
+\eqp
+\beq Are the simple graphs with the following adjacency matrices isomorphic?Explain.\vskip2cm \hskip-3cm \[M_{a1}= \left( \begin{array}{cccc} 0 & 1 & 1 & 0 \\1 & 0 & 0  & 1 \\ 1 & 0 & 0  & 1\\0 & 1 & 1  & 0\end{array} \right), \hskip1cm M_{a2}= \left( \begin{array}{cccc} 0 & 1 & 0 & 1 \\1 & 0 & 0  & 1 \\ 0 & 0 & 0  & 1\\ 1 & 0 & 1  & 0\end{array} \right)\]  
+
+They do not have the same number of edges so they are not isomorphic.\\
+
+\eqp
+\beq Write the incidence matrix for the  graph below. You can use the ``order'' sugested by the vertices.\\ \hskip-2cm \[ \fbox{ \xygraph{ !{<0cm,0cm>;<0cm,2cm>:<-2cm,0cm>::} !{(0,0);a(0)**{}?(1.0)}*{\bullet_1}="a1" !{(0,0);a(72)**{}?(1.0)}*{\bullet_2}="a2" !{(0,0);a(144)**{}?(1.0)}*{\bullet_3}="a3" !{(0,0);a(216)**{}?(1.0)}*{\bullet_4}="a4" !{(0,0);a(288)**{}?(1.0)}*{\bullet_5}="a5" !{(0,0);a(0)**{}?(1.8)}*{\bullet_6}="b1" !{(0,0);a(72)**{}?(1.8)}*{\bullet_7}="b2" !{(0,0);a(144)**{}?(1.8)}*{\bullet_8}="b3" !{(0,0);a(216)**{}?(1.8)}*{\bullet_9}="b4" !{(0,0);a(288)**{}?(1.8)}*{\bullet_{10}}="b5" "a1"-"a3" "a3"-"a5" "a5"-"a2" "a2"-"a4" "a4"-"a1" "b1"-"b2" "b2"-"b3" "b3"-"b4" "b4"-"b5" "b5"-"b1" "a1"-"b1" "a2"-"b2" "a3"-"b3" "a4"-"b4" "a5"-"b5" } } \] 
+
+$\left(\begin{array}{ccccccccccccccc} 1&1&0&0&0&0&0&0&0&0&0&0&0&0&0\\0&0&0&1&1&1&0&0&0&0&0&0&0&0&0\\0&1&0&0&0&0&1&1&0&0&0&0&0&0&0\\0&0&1&1&0&0&0&0&1&0&0&0&0&0&0\\1&0&0&0&0&0&0&0&0&0&1&1&0&0&0\\0&0&0&0&0&1&0&0&0&0&1&0&1&0&0\\0&0&0&0&0&0&0&1&0&0&0&0&1&1&0\\0&0&0&0&0&0&0&0&1&0&0&0&0&1&1\\0&0&0&0&0&0&0&0&0&1&0&1&0&0&1\end{array}\right)$
+
+\eqp
+\beq Find the number of paths of length n between any two adjacent vertices in $K_{3,3}$ for  $n=\{1, 2, 3, 4\}$.\\
+
+1. n = 1, there is 1 path.\\
+
+2. n = 2, there are 0 paths.\\
+
+3. n = 3, there are 2 paths.\\
+
+4. n = 4, there are 0 paths.\\
+
+\eqp
+\beq For which values of m and n does the complete bipartite graph $K_{m, n}$ have an \\a) Euler circuit?\\ There is an Euler circuit when both the sides of the bipartite graph are even. \\b) Euler path?\\ There is an Euler path when atleast one of the sides is even.\\\eqp
+\beq Decide if the graph below has a Hamilton circuit. If it does show it. Decide if it has a Hamilton path. If it does show it. Can you use any of the theorems to decide? Explain.\vskip1.7cm\hskip1cm \xygraph{ !{<0cm,0cm>;<3.5cm,0cm>:<0cm,-3.5cm>::} !{(1,-1) }*{\bullet_{a}}="a" !{(2,-1) }*{\bullet_{ b}}="b" !{(3,-1) }*{\bullet_{c}}="c" !{(1,0)}*{\bullet_{d}}="d" !{(1,1)}*{\bullet_{e}}="e" !{(2,1)}*{\bullet_{f}}="f"   !{(3,1) }*{\bullet_{g}}="g" !{(3,0) }*{\bullet_{h}}="h" !{(1.5,-0.5) }*{\bullet_{i}}="i" !{(2,-0.5)}*{\bullet_{j}}="j" !{(2.5,-0.5)}*{\bullet_{k}}="k" !{(1.5,0)}*{\bullet_{o}}="o"   !{(2,0) }*{\bullet_{p}}="p" !{(2.5,0) }*{\bullet_{q}}="q" !{(2,0.5) }*{\bullet_{m}}="m" !{(1.5,0.5)}*{\bullet_{n}}="n" !{(2.5,0.5)}*{\bullet_{l}}="l"  "a"-"b"  "b"-"c" "d"-"a" "d"-"e" "e"-"f"  "f"-"g" "h"-"g" "b"-"j" "f"-"m" "j"-"b"  "j"-"k" "j"-"i" "d"-"o" "o"-"p"  "p"-"q"  "c"-"h"  "h"-"q" "q"-"k" "l"-"q" "l"-"m"  "m"-"n"   "n"-"o"  "o"-"i" "j"-"p" "p"-"m" }\\
+
+Looking at the inside subgraph, every Hamilton path of the subgraph consists of a corner vertex as the first vertex. Therefore, the second to last vertex in the path cannot be a corner vertex. There is no hamilton path in this graph because the outside subgraph does not have a non-corner vertex connecting the inside to the outside.\\
+
+\eqp
+\beq Show that $K_5$ is nonplanar using an argument similar to that given in Example 3 section 10.7 in the textbook.\\
+
+If $v_1, v_2, and v_3$ form a triangle with $v_4$ inside, $v_5$ can only be connected to three other vertices without crossing lines if all the other vertices are connected with each other. The graph is nonplanor because you cannot connect $v_5$ to all four other vertices.\\
+
+\eqp
+\beq Suppose that a connected planar graph has 30 edges. If a planar representation of this graph divides the plane into 20 regions, how many vertices does this graph have?\\
+
+Using Euler's Forumula:\\
+
+$r=e-v+2$\\
+
+$\implies$ 20 = 30 - v + 2\\
+
+$\implies$ v = 12\\
+
+\eqp
+\beq What is the chromatic number of $W_n$?\\
+
+If n is even, the chromatic number is 3. If n is odd, the chromatic number is 4. For n is even, the colors can be alternated with the third in the middle. For n is odd, three are needed for the outer and the fourth for the inner.
+
+\eqp
+\beq An edge coloring of a graph is an assignment of colors to edges so that edges incident with a common vertex are assigned different colors. The edge chromatic number of a graph is the smallest number of colors that can be used in an edge coloring of the graph. Find the edge chromatic numbers of $C_n$, where $n \geq 3$.\\
+
+Two colors are needed when n is even (the colors can be alternated and will never be adjacent). When n is odd, however, 3 colors are needed. If you have two colors when n is odd, the colors will eventually color an edge on the remaining vertex, requiring a third color.
+
+\eqp
+\end{document}
